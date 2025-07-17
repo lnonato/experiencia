@@ -15,6 +15,18 @@ document.addEventListener("DOMContentLoaded", function () {
             window.location.href = "https://dayimports.com.br/";
         });
     }
+    var cupom = document.getElementById("cupomTexto");
+    var msg = document.getElementById("mensagemCopiado");
+
+    cupom.addEventListener("click", function () {
+        var texto = cupom.innerText;
+        navigator.clipboard.writeText(texto).then(function () {
+            msg.style.display = "inline";
+            setTimeout(() => {
+                msg.style.display = "none";
+            }, 2000);
+        });
+    });
 });
 
 var isModalOpen = false;
